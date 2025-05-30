@@ -1,0 +1,17 @@
+/* ملف CSS محسن */
+.enhanced-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.glow-effect {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.pump-indicator {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
