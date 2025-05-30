@@ -953,8 +953,6 @@ class EnhancedCryptoPumpDetector {
         card.style.animationDelay = `${index * 0.1}s`;
         
         const changeClass = coin.change24h >= 0 ? 'price-positive' : 'price-negative';
-        const changeIcon = coin.change24h >= 0
-
         const changeIcon = coin.change24h >= 0 ? '📈' : '📉';
         
         // تحديد نوع التوصية بناءً على حالة السوق
