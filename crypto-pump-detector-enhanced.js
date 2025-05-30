@@ -1813,7 +1813,10 @@ class EnhancedCryptoPumpDetector {
 }
 
 // إنشاء مثيل من الكاشف
-const detector = new CryptoPumpDetector();
+document.addEventListener('DOMContentLoaded', function() {
+    const detector = new CryptoPumpDetector();
+});
+
 
 // بدء التطبيق عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', () => {
