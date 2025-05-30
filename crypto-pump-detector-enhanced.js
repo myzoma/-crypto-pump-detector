@@ -1,5 +1,7 @@
 class EnhancedCryptoPumpDetector {
     constructor() {
+         this.okxAdapter = new OKXAdapter(OKX_CONFIG);
+        this.useOKX = true; // تبديل المصدر
         this.coins = [];
         this.filteredCoins = [];
         this.currentFilter = 'all';
@@ -1863,3 +1865,29 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = CryptoPumpDetector;
 }
 
+class CryptoPumpDetector {
+    // ... كل الكود الموجود
+
+    // أضف هذه الدوال في النهاية قبل إغلاق الكلاس
+    async fetchCoinGeckoData() {
+        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=volume_desc&per_page=100&page=1');
+        return await response.json();
+    }
+
+    toggleDataSource() {
+        this.useOKX = !this.useOKX;
+        this.showNotification(
+            this.useOKX ? 'تم التبديل إلى OKX API' : 'تم التبديل إلى CoinGecko API',
+            'info'
+        );
+        this.fetchData();
+    }
+
+    showRetryButton() {
+        // دالة لإظهار زر إعادة المحاولة
+        const retryBtn = document.createElement('button');
+        retryBtn.textContent = 'إعادة المحاولة';
+        retryBtn.onclick = () => this.fetchData();
+        document.getElementById('coinsGrid').appendChild(retryBtn);
+    }
+} // إغلاق الكلاس
