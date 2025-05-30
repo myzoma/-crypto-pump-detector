@@ -1534,14 +1534,14 @@ class EnhancedCryptoPumpDetector {
         
         let content = '';
         
-        if (warnings.length > 0) {
-            content += '<div class="warnings"><h4>تحذيرات مهمة:</h4><ul>';
-            warnings.forEach(
-            warnings.forEach(warning => {
-                content += `<li class="warning-item">${warning}</li>`;
-            });
-            content += '</ul></div>';
-        }
+       if (warnings.length > 0) {
+    content += '<div class="warnings"><h4>تحذيرات مهمة:</h4><ul>';
+    warnings.forEach(warning => {
+        content += `<li class="warning-item">${warning}</li>`;
+    });
+    content += '</ul></div>';
+}
+
         
         if (tips.length > 0) {
             content += '<div class="tips"><h4>نصائح وتوصيات:</h4><ul>';
